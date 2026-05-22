@@ -16,15 +16,18 @@ password = "123456"
 count = 0
 is_valid = True
 
-while count != 3:
+while True:
     input_web = input("Nhập Password để đăng nhập: ")
     if input_web == password:
         print("Đăng nhập thành công!")
         break
     else:
-        count += 1
-        is_valid = False
+        count += 1      
         print(f"Mật khẩu sai lần {count}, Vui lòng nhập lại!")
+
+        if count == 3:
+            is_valid = False 
+            break   
 
 if is_valid == False:
     print("Đã nhập quá 3 lần. Tài khoản của bạn đã bị khóa!");
